@@ -3,7 +3,7 @@
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
-    background-color: #131312;
+    background-color: #20201f;
     margin: 0;
     padding: 0;
     color: #ebebeb;
@@ -46,6 +46,7 @@ body {
 .hero h1 {
     font-size: 64px;
     font-weight: bold;
+    color: #df3f54;
 }
 
 .hero p {
@@ -65,22 +66,55 @@ body {
     margin-right: 30px;
 }
 
-
+.testimonial-card h4{
+    color: #6767f3
+}
 
 /* Testimonials */
 .ChatbotWindow {
-    padding: 40px;
-    margin: 20px;
+    padding: 20px;
+    margin: 50px;
     border: #ebebeb 1px solid;
     border-radius: 20px;
 }
+.chatbot-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #e2ba27;
+    padding: 20px;
+    border-radius: 10px;
+}
+.chat-log {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #9B9B93;
+}
+.chat-input button{
+    color: white;
+    background-color: #000000;
+    border: none;
+    height: 25px;
+    width: 90px;
+    font-size: 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#user-input {
+    display: flex;
+    gap: 10px;
+    
+}
 
 .testimonial-card {
-    background: rgb(211, 175, 58);
+    background: #e2ba27;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    color: #030431;
 }
 
 /* Footer */

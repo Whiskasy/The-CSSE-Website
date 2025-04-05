@@ -11,10 +11,9 @@
     <section class="hero">
         <div class="hero-background">
             <img src="images/Bottle.webp" alt="Om Oil Bottle">
-            <img src="images/Bottle.webp" alt="Om Oil Bottle">
         </div>
         <div class="hero-content">
-            <h1 style="color: rgb(255, 255, 255);">The CSSE Chatbot</h1>
+            <h1>The CSSE Chatbot</h1>
             <h2>The answer to all your computer science and software engineering questions</h2>
         
         </div>
@@ -42,21 +41,20 @@
     </section>
     
     <section class="ChatbotWindow">
-        <div class="testimonial-card">
-            <blockquote>"Amazing results! Highly recommend."</blockquote>
-            <p>- Customer 1</p>
-        </div>
-        <div class="testimonial-card">
-            <blockquote>"I love how my hair feels after using this!"</blockquote>
-            <p>- Customer 2</p>
-        </div>
-        <div class="testimonial-card">
-            <blockquote>"Best hair oil I've ever tried!"</blockquote>
-            <p>- Customer 3</p>
+        <!-- Chatbot window will be implemented here -->
+        <div class="chatbot-container">
+            <div id="chat-log" class="chat-log"></div>
+            
+            <div class="chat-input">
+                <input type = "text" id="user-input" placeholder="Ask me a CSSE question...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
         </div>
     </section>
     <footer>
         <p>&copy; 2025 Lippé. All Rights Reserved.</p>
     </footer>
+
+    <script src="Chatbot.js"></script>
 </body>
 </html>
