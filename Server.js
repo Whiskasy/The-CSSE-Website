@@ -8,7 +8,7 @@ const path = require('path');
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -33,19 +33,28 @@ app.post('/api/chat', async (req, res) => {
         body: JSON.stringify({
             model: "deepseek/deepseek-v3-base:free",
             messages: [
-                { role: "system", content: "You are a helpful assistant specialized in helping anything related to CSSE courses only. Decline anything else." },
+                { role: "system", content: "You are a helpful assistant specialized in helping anything related to CSSE courses only. Respond to prompts unrelated to computer science and software engineering with a message saying you only answer CSSE related prompts." },
                 { role: "user", content: userMessage}
                 ]
             })
     })
-    const data = await response.json();
+    
+    let data;
+    try {
+    data = await response.json();
+    } catch (error) {
+    console.error("Error parsing JSON response from OpenRouter API:", error.message);
+    return res.status(500).json({ botResponse: "The chatbot encountered an error while parsing JSON response. Please try again later." });
+    }
+
     if (!data.choices || !data.choices[0]?.message?.content) {
-        throw new Error("Invalid OpenAI response: " + JSON.stringify(data));
+        console.warn("Empty or invalid response from OpenRouter API:", JSON.stringify(data));
+        return res.json({ botResponse: "I'm sorry, I couldn't process your request. Please try asking something else." });
     }
     const botResponse = data.choices[0].message.content;
     res.json({ botResponse });
     } catch (error) {
-        console.error("Server Error:", error);
+        console.error("Server Error:", error.message, error.stack);
         res.status(500).json({ botResponse: "Error processing your request."});
     }
 });

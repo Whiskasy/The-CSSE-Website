@@ -91,6 +91,7 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     background-color: #9B9B93;
+    color: #000;
 }
 .chat-input button{
     color: white;
