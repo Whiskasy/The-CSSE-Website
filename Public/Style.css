@@ -84,6 +84,7 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
+
 .chat-log {
     height: 300px;
     overflow-y: auto;
@@ -93,6 +94,7 @@ body {
     background-color: #9B9B93;
     color: #000;
 }
+
 .chat-input button{
     color: white;
     background-color: #000000;
@@ -102,6 +104,10 @@ body {
     font-size: 12px;
     margin-right: 10px;
     cursor: pointer;
+}
+
+#repoButton {
+    width: 150px;
 }
 #user-input {
     display: flex;

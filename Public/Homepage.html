@@ -27,7 +27,8 @@
             
         <h4>How does it work?</h4>
             <p> <blockquote>Simply type in your question in the chatbot window and the chatbot will provide you with an answer. It's that simple!
-                Whenever you send a prompt, a call is made to the OpenRouter chatbot API, it uses the deepseek v3 model which processes the the question and returns a CSSE related response.
+                Whenever you send a prompt, a call is made to the OpenRouter chatbot API, it uses the deepseek v3 model which processes the question and returns a CSSE related response.
+                The chatbot is also capable of fetching details on GitHub repositories with the click of a button using the GitHub API. This allows you to get the latest information about a specific repository of your choice!
             </blockquote> </p>
         
         <h4>Why?</h4>
@@ -43,8 +44,10 @@
             <div id="chatLog" class="chat-log"></div>
             
             <div class="chat-input">
-                <input type = "text" id="user-input" placeholder="Ask me a CSSE question...">
+                <input type = "text" id="user-input" placeholder="Ask me a CSSE question or press the GitHub repo button...">
                 <button onclick="sendMessage()">Send</button>
+                <button id="repoButton" onclick="fetchGitHubRepo(prompt('Enter GitHub repo (e.g., owner/repo):'))">Fetch GitHub Repo</button>
+
             </div>
         </div>
     </section>

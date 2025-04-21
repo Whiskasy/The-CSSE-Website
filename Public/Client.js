@@ -18,7 +18,7 @@ async function sendMessage(){
     }
 }
 
-function appendMessage(sender, message) {
+function appendMessage(sender, message) { // To make the messages appear in the chat window
     const chatLog = document.getElementById("chatLog");
     const messageElement = document.createElement("div");
     messageElement.className = `message ${sender.toLowerCase()}`;
@@ -27,7 +27,7 @@ function appendMessage(sender, message) {
     chatLog.scrollTop = chatLog.scrollHeight;
 }
 
-async function fetchBotResponse(userMessage){
+async function fetchBotResponse(userMessage){  // To fetch the bot response from the server
     const response = await fetch("http://localhost:3000/api/chat",{
         method: "POST",
         headers: {
@@ -37,4 +37,19 @@ async function fetchBotResponse(userMessage){
     });
     const data = await response.json();
     return data.botResponse;
+}
+
+async function fetchGitHubRepo(repoName) { // To fetch GitHub repository information
+    try {
+        const response = await fetch(`https://api.github.com/repos/${repoName}`);
+        if (!response.ok) {
+            throw new Error("Repository not found");
+        }
+        const repoData = await response.json();
+        const repoInfo = `Repository: ${repoData.full_name}\nDescription: ${repoData.description}\nStars: ${repoData.stargazers_count}\nForks: ${repoData.forks_count}`;
+        appendMessage("ChatBot", repoInfo);
+    } catch (error) {
+        console.error("Error fetching GitHub repository:", error);
+        appendMessage("ChatBot", "Sorry, I couldn't fetch the repository details. Please check the repository name and try again.");
+    }
 }
