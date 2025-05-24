@@ -1,0 +1,15 @@
+{
+  "name": "csse-chatbot",
+  "version": "1.0.0",
+  "description": "A specialized CSSE chatbot using OpenRouter API and GitHub API.",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7"
+  }
+}
