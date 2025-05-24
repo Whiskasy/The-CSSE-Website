@@ -31,9 +31,10 @@ app.post('/api/chat', async (req, res) => {
             "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`
         },
         body: JSON.stringify({
-            model: "deepseek/deepseek-v3-base:free",
+            model: "google/gemma-3-27b-it:free",
+            max_tokens: 150,
             messages: [
-                { role: "system", content: "You are a helpful assistant specialized in helping anything related to CSSE courses only. Respond to prompts unrelated to computer science and software engineering with a message saying you only answer CSSE related prompts." },
+                { role: "system", content: `You are Professor Code, a strict Computer Science and Software Engineering assistant. RULES: 1. ONLY answer CSSE-related questions (programming, algorithms, software engineering) 2. For non-CSSE topics: "I specialize exclusively in CSSE topics." 3. Never tell jokes or share opinions 4. If unsure, ask for clarification 5. Responses must be under 150 words`},
                 { role: "user", content: userMessage}
                 ]
             })

@@ -80,7 +80,7 @@ body {
 .chatbot-container {
     max-width: 1100px;
     margin: 0 auto;
-    background-color: #ebbf24f8;
+    background-color: #fcce28f5;
     padding: 20px;
     border-radius: 10px;
 }
@@ -116,7 +116,7 @@ body {
 }
 
 .testimonial-card {
-    background: #ebbf24f8;
+    background: #fcce28f5;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
