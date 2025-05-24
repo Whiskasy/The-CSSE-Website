@@ -9,13 +9,13 @@ const path = require('path');
 // Middleware
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:3000" }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 
 
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Homepage.html'));
+    res.sendFile(path.join(__dirname, 'Public', 'Homepage.html'));
 });
 
 
