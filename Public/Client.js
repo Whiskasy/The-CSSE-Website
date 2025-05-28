@@ -28,7 +28,7 @@ function appendMessage(sender, message) { // To make the messages appear in the 
 }
 
 async function fetchBotResponse(userMessage){  // To fetch the bot response from the server
-    const response = await fetch("http://localhost:3000/api/chat",{
+    const response = await fetch("https://the-csse-website-production.up.railway.app/",{
         method: "POST",
         headers: {
             "Content-Type": "application/json",
